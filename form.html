@@ -74,7 +74,7 @@
       jsonObject[key] = value;
     });
 
-    // Send feedback data to Google Apps Script Web App for processing
+    // Send feedback data to server-side script (Google Apps Script) for processing
     fetch('https://script.google.com/macros/s/AKfycbwhcnqJcphfRVMpClpTgRJMBRPzBxwRnbW_n97J9_J7xggL98zqeMp_Abo4bLgJPbQf/exec', {
       method: 'POST',
       headers: {
