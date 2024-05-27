@@ -5,7 +5,7 @@
 </head>
 <body>
   <h2>Assessment Form</h2>
-  <form id="assessmentForm">
+  <form id="assessmentForm" action="https://script.google.com/macros/s/AKfycbzrTnF4ep8j1YOEt6FXebGGF99xJ2XqeA_lwCndvtaaeq9qtCZ70r0kTC3ajRyfyxaf/exec" method="post">
     <label for="delegateName">Delegate Name:</label><br>
     <input type="text" id="delegateName" name="delegateName" required><br><br>
     <label for="quizName">Quiz Name:</label><br>
@@ -24,12 +24,12 @@
   <script>
     document.getElementById('assessmentForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      fetch('https://script.google.com/macros/s/AKfycbzrTnF4ep8j1YOEt6FXebGGF99xJ2XqeA_lwCndvtaaeq9qtCZ70r0kTC3ajRyfyxaf/exec', {
+      fetch(e.target.action, { 
         method: 'POST',
         body: new URLSearchParams(new FormData(e.target))
-      }).then(response => response.json())
+      }).then(response => response.text())
       .then(data => {
-        if (data.result === 'success') {
+        if (data === 'Success') {
           alert('Form submitted successfully');
           e.target.reset(); // Reset the form after successful submission
         } else {
