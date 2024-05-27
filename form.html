@@ -74,9 +74,8 @@
       jsonObject[key] = value;
     });
 
-    // Send feedback data to server-side script (e.g., PHP) for processing
-    // Replace 'submit_feedback.php' with the URL of your server-side script
-    fetch('https://script.google.com/macros/s/AKfycbwhcnqJcphfRVMpClpTgRJMBRPzBxwRnbW_n97J9_J7xggL98zqeMp_Abo4bLgJPbQf/exec', {
+    // Send feedback data to Google Apps Script Web App for processing
+    fetch('https://script.google.com/macros/s/AKfycbwhcnqJcphfRVMpClpTgRJMBRPzBxwRnbW_n97J9_J7xggL98zqeMp_Abo4bLgJPbQf/exec', { // Replace 'your_web_app_url' with the URL of your deployed Google Apps Script Web App
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
