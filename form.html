@@ -24,7 +24,7 @@
   <script>
     document.getElementById('assessmentForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      fetch('https://script.google.com/macros/s/AKfycbyRt6TDcJyp6xtT5JEEy3D5sBbgmgmxszy1juGqSAZIumZv30zTbtW-laIptEhisK_W8g/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbzrTnF4ep8j1YOEt6FXebGGF99xJ2XqeA_lwCndvtaaeq9qtCZ70r0kTC3ajRyfyxaf/exec', {
         method: 'POST',
         body: new URLSearchParams(new FormData(e.target))
       }).then(response => response.json())
