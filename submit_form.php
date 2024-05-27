@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST["message"];
 
     // Create email
-    $to = "recipient@example.com"; // Recipient email address
+    $to = "shorthousej11@gmail.com"; // Recipient email address
     $subject = "Feedback Form Submission";
     $body = "Name: $name\nEmail: $email\nMessage: $message";
     $headers = "From: $email"; // Sender's email address, can be the user's email
