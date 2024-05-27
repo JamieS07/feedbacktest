@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assessment Form</title>
+</head>
+<body>
+  <h2>Assessment Form</h2>
+  <form id="assessmentForm">
+    <label for="delegateName">Delegate Name:</label><br>
+    <input type="text" id="delegateName" name="delegateName" required><br><br>
+    <label for="quizName">Quiz Name:</label><br>
+    <input type="text" id="quizName" name="quizName" required><br><br>
+    <label for="overallScore">Overall Score:</label><br>
+    <input type="text" id="overallScore" name="overallScore" required><br><br>
+    <label for="comments">Comments:</label><br>
+    <textarea id="comments" name="comments" required></textarea><br><br>
+    <label for="criteria1">Criteria 1:</label><br>
+    <input type="text" id="criteria1" name="criteria1" required><br><br>
+    <label for="criteria2">Criteria 2:</label><br>
+    <input type="text" id="criteria2" name="criteria2" required><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      fetch('https://script.google.com/macros/s/AKfycbyRt6TDcJyp6xtT5JEEy3D5sBbgmgmxszy1juGqSAZIumZv30zTbtW-laIptEhisK_W8g/exec', {
+        method: 'POST',
+        body: new URLSearchParams(new FormData(e.target))
+      }).then(response => response.json())
+      .then(data => {
+        if (data.result === 'success') {
+          alert('Form submitted successfully');
+          e.target.reset(); // Reset the form after successful submission
+        } else {
+          alert('Form submission failed');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
